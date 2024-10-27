@@ -34,19 +34,6 @@ schema_view = get_schema_view(
     authentication_classes = [JWTAuthentication],
     permission_classes=(permissions.AllowAny,),
 )
-schema_view._swagger_schema = {
-    "securityDefinitions": {
-        "Bearer": {
-            "type": "apiKey",
-            "name": "Authorization",
-            "in": "header",
-            "description": "Enter 'Bearer ' followed by your token in the text box below.",
-        }
-    },
-    "security": [
-        {"Bearer": []}
-    ],
-}
 
 urlpatterns = [
     path('admin/', admin.site.urls),
